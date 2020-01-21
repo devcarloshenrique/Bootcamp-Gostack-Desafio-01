@@ -25,8 +25,6 @@ function checkUserInArray(req, res, next) {
 
   req.user = user 
 
-  console.log(user)
-  
   return next();
 }
 
@@ -79,7 +77,7 @@ server.post('/projects/:index/tasks', checkUserInArray, ( req, res ) => {
 
   const { title } = req.body;
 
-  dataBase[index].tanks = [`${ title }`];
+  dataBase[index].tasks = [`${ title }`];
 
   return res.json(dataBase[index]);
 })
